@@ -1,0 +1,5 @@
+﻿  Source.cpp
+C:\Users\Home\source\repos\11.10.2020\11.10.2020\Source.cpp(216,19): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\Home\source\repos\11.10.2020\11.10.2020\Source.cpp(216,22): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\Home\source\repos\11.10.2020\11.10.2020\Source.cpp(542,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  11.10.2020.vcxproj -> C:\Users\Home\source\repos\11.10.2020\Debug\11.10.2020.exe
