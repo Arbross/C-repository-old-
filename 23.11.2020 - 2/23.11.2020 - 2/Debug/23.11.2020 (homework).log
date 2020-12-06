@@ -1,0 +1,15 @@
+﻿  main.cpp
+C:\Users\victor\source\repos\23.11.2020 (homework)\23.11.2020 (homework)\Train.h(29,11): error C2512: Car: нет подходящего конструктора по умолчанию
+  Train.cpp
+C:\Users\victor\source\repos\23.11.2020 (homework)\23.11.2020 (homework)\Train.h(29,11): error C2512: Car: нет подходящего конструктора по умолчанию
+C:\Users\victor\source\repos\23.11.2020 (homework)\23.11.2020 (homework)\Train.cpp(20,34): error C2512: Car: нет подходящего конструктора по умолчанию
+C:\Users\victor\source\repos\23.11.2020 (homework)\23.11.2020 (homework)\Train.cpp(22,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\victor\source\repos\23.11.2020 (homework)\23.11.2020 (homework)\Train.cpp(39,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\victor\source\repos\23.11.2020 (homework)\23.11.2020 (homework)\Train.cpp(41,11): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\victor\source\repos\23.11.2020 (homework)\23.11.2020 (homework)\Train.cpp(54,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\victor\source\repos\23.11.2020 (homework)\23.11.2020 (homework)\Train.cpp(56,11): warning C4018: >: несоответствие типов со знаком и без знака
+C:\Users\victor\source\repos\23.11.2020 (homework)\23.11.2020 (homework)\Train.cpp(81,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\victor\source\repos\23.11.2020 (homework)\23.11.2020 (homework)\Train.cpp(83,11): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\victor\source\repos\23.11.2020 (homework)\23.11.2020 (homework)\Train.cpp(96,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\victor\source\repos\23.11.2020 (homework)\23.11.2020 (homework)\Train.cpp(98,11): warning C4018: >: несоответствие типов со знаком и без знака
+  Создание кода...

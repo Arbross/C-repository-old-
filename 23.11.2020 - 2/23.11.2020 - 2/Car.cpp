@@ -1,39 +1,57 @@
 #include "Car.h"
 
-size_t Train::MaxPersons() const
+Car::Car(size_t& size)
+	: size(size)
 {
-	int max = 0;
-
-	for (int i = 0; i < trainsCount; i++)
-	{
-		if (max < train[i])
-		{
-			max = train[i];
-		}
-	}
-
-	return max;
+	randType = static_cast<carType>(rand() % LAST);
 }
 
-size_t Train::MinPersons() const
+string Car::getCarTypeString() const
 {
-	int min = train[0];
+	string temp;
 
-	for (int i = 0; i < trainsCount; i++)
+	if (randType == 0)
 	{
-		if (min > train[i])
-		{
-			min = train[i];
-		}
+		return temp = "COMPARTAMENT";
 	}
-
-	return min;
+	else if (randType == 1)
+	{
+		return temp = "SEATCAR";
+	}
+	else if (randType == 2)
+	{
+		return temp = "SLEEPING";
+	}
+	else {
+		return temp = "Error";
+	}
 }
 
-void Train::Print() const
+size_t Car::getCarNums() const
 {
-	cout << "Train id: " << this->trainID << endl;
-	cout << "Name: " << this->name << endl;
-	cout << "Type: " << train->randType << endl;
-	cout << "Persons count: " << train->personsCount << endl;
+	return this->carNums[size];
+}
+
+void Car::Print() const
+{
+	cout << "Type : " << getCarTypeString() << ", " << carNums[size] << endl;
+}
+
+void Car::setCarNums()
+{
+	if (randType == 0)
+	{
+		this->size = 0;
+	}
+	else if (randType == 1)
+	{
+		this->size = 1;
+	}
+	else if (randType == 2)
+	{
+		this->size = 2;
+	}
+	else {
+		cout << "Error" << endl;
+	}
 }
