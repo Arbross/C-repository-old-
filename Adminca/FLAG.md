@@ -1,1 +1,0 @@
-It uses for isnt delete the folder
