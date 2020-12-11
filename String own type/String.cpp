@@ -125,6 +125,11 @@ String& String::operator +(String& other)
 
 
 
+String& String::operator()(String& other)
+{
+	
+}
+
 String& String::operator *=(String& other)
 {
 	char* temp_str = new char[this->size];
@@ -172,11 +177,6 @@ String& String::operator +=(String& other)
 	this->str[temp_size] = this->str[this->size] + other.str[other.size];
 }
 
-ostream& String::operator>>(ostream& cin)
-{
-	cin >>
-}
-
 String& operator +=(String& other, char* str)
 {
 	size_t temp_size = other.size + strlen(str);
@@ -192,6 +192,20 @@ String& operator +=(char* str, String& other)
 	str[temp_size] += str[strlen(str)];
 	str[temp_size] += other.str[other.size];
 }
+
+ostream& operator <<(ostream& out, const String& s)
+{
+	out << s.getStr();
+
+	return out;
+}
+
+/*istream& operator >>(istream& in, String& s)
+{
+	in >> s.setStr(s.getStr());
+	
+	return in;
+}*/
 
 String& String::operator <(String& other)
 {
@@ -248,6 +262,11 @@ String& String::operator!()
 		this->str[i] += str[j];
 		j++;
 	}
+}
+
+String& String::operator[](int idex)
+{
+	return this->str[idex];
 }
 
 String& operator+(String& other, char* str)

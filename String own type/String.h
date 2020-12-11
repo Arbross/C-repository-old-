@@ -26,21 +26,25 @@ public:
 	String& operator == (String& other);
 	String& operator != (String& other);
 	String& operator ! ();
-	String& operator [] (String& other);
+	String& operator [] (int idex);
 	String& operator () (String& other);
 	String& operator *= (String& other);
 	String& operator /= (String& other);
 	String& operator += (String& other);
 	friend String& operator += (String& other, char* str);
 	friend String& operator += (char* str, String& other);
-	ostream& operator >> (ostream& cin);
-	istream& operator << (istream& cout);
+	friend ostream& operator <<(ostream& out, const String& s);
+	friend istream& operator >>(istream& in, String& s);
 
 	friend void Swap(String& objFirst, String& objSecond);
 
-	const char* getStr() const
+	char* getStr() const
 	{
 		return str;
+	}
+	void setStr(char* str)
+	{
+		this->str = str;
 	}
 
 
