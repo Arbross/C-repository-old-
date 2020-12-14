@@ -1,0 +1,6 @@
+﻿  Circle.cpp
+  Main.cpp
+  Rectangle.cpp
+  Triangle.cpp
+  Создание кода...
+C:\Users\victor\source\repos\7.12.2020 - lists homework\7.12.2020 - lists homework\Main.cpp(9): error C4716: Main::maxArea: должна возвращать значение

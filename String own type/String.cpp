@@ -29,7 +29,7 @@ String String::concat(const String& other)
 
 String String::isEqueal(const String& other)
 {
-	char* temp_str = new char[this->size];
+	char* temp_str = nullptr;
 
 	for (size_t i = 0; i < this->size; i++)
 	{
@@ -75,9 +75,9 @@ String& String::operator=(String&& other)
 	return *this;
 }
 
-String& String::operator*(String& other)
+String& String::operator *(const String& other)
 {
-	char* temp_str = new char[this->size];
+	String string;
 
 	for (size_t i = 0; i < this->size; i++)
 	{
@@ -85,7 +85,7 @@ String& String::operator*(String& other)
 		{
 			if (this->str[i] == other.str[j])
 			{
-				temp_str[i] += this->str[i];
+				string.str[i] += this->str[i];
 			}
 			else {
 				continue;
@@ -93,12 +93,12 @@ String& String::operator*(String& other)
 		}
 	}
 
-	// this->str = *temp_str;
+	return string;
 }
 
-String& String::operator /(String& other)
+String& String::operator /(const String& other)
 {
-	char* temp_str = new char[this->size];
+	String string;
 
 	for (size_t i = 0; i < this->size; i++)
 	{
@@ -106,33 +106,30 @@ String& String::operator /(String& other)
 		{
 			if (this->str[i] != other.str[j])
 			{
-				temp_str[i] += this->str[i];
+				string.str[i] += this->str[i];
 			}
 			else {
 				continue;
 			}
 		}
 	}
+
+	return string;
 }
 
-String& String::operator +(String& other)
+String& String::operator +(const String& other)
 {
+	String string;
 	size_t temp_size = this->size + other.size;
 
-	this->str[temp_size] = this->str[this->size] + other.str[other.size];
+	string.str[temp_size] = this->str[this->size] + other.str[other.size];
+
+	return string;
 }
 
-
-
-
-String& String::operator()(String& other)
+String& String::operator *=(const String& other)
 {
-	
-}
-
-String& String::operator *=(String& other)
-{
-	char* temp_str = new char[this->size];
+	String string;
 
 	for (size_t i = 0; i < this->size; i++)
 	{
@@ -140,7 +137,7 @@ String& String::operator *=(String& other)
 		{
 			if (this->str[i] == other.str[j])
 			{
-				temp_str[i] += this->str[i];
+				string.str[i] += this->str[i];
 			}
 			else {
 				continue;
@@ -148,12 +145,12 @@ String& String::operator *=(String& other)
 		}
 	}
 
-	// this->str = *temp_str;
+	return string;
 }
 
-String& String::operator /=(String& other)
+String& String::operator /=(const String& other)
 {
-	char* temp_str = new char[this->size];
+	String string;
 
 	for (size_t i = 0; i < this->size; i++)
 	{
@@ -161,128 +158,201 @@ String& String::operator /=(String& other)
 		{
 			if (this->str[i] != other.str[j])
 			{
-				temp_str[i] += this->str[i];
+				string.str[i] += this->str[i];
 			}
 			else {
 				continue;
 			}
 		}
 	}
+
+	return string;
 }
 
-String& String::operator +=(String& other)
+String& String::operator +=(const String& other)
 {
+	String string;
 	size_t temp_size = this->size + other.size;
 
-	this->str[temp_size] = this->str[this->size] + other.str[other.size];
+	string.str[temp_size] = this->str[this->size] + other.str[other.size];
+
+	return string;
 }
 
-String& operator +=(String& other, char* str)
+String& operator +=(const String& other, char* str)
 {
+	String string;
 	size_t temp_size = other.size + strlen(str);
 
 	str[temp_size] += other.str[other.size];
 	str[temp_size] += str[strlen(str)];
+
+	string.str[temp_size] = str[temp_size];
+
+	return string;
 }
 
-String& operator +=(char* str, String& other)
+String& operator +=(char* str, const String& other)
 {
+	String string;
 	size_t temp_size = other.size + strlen(str);
 
 	str[temp_size] += str[strlen(str)];
 	str[temp_size] += other.str[other.size];
+
+	string.str[temp_size] = str[temp_size];
+
+	return string;
 }
 
-ostream& operator <<(ostream& out, const String& s)
+std::ostream& operator <<(std::ostream& out, const String& s)
 {
 	out << s.getStr();
 
 	return out;
 }
 
-/*istream& operator >>(istream& in, String& s)
+/*std::istream& operator >>(std::istream& in, String& s)
 {
-	in >> s.setStr(s.getStr());
+	char* str = s.getStr();
+
+	in >> s.setStr(str);
 	
 	return in;
 }*/
 
-String& String::operator <(String& other)
+bool String::operator <(const String& other)
 {
-	if (this->size < other.size)
-	{
-		cout << "First in lower than two." << endl;
-	}
+	return this->size < other.size;
 }
 
-String& String::operator >(String& other)
+bool String::operator >(const String& other)
 {
-	if (this->size > other.size)
-	{
-		cout << "First in bigger than two." << endl;
-	}
+	return this->size > other.size;
 }
 
-String& String::operator <=(String& other)
+bool String::operator <=(const String& other)
 {
-	if (this->size <= other.size)
-	{
-		cout << "First in lower than two (<=)." << endl;
-	}
+	return this->size <= other.size;
 }
 
-String& String::operator >=(String& other)
+bool String::operator >=(const String& other)
 {
-	if (this->size >= other.size)
-	{
-		cout << "First in bigger than two (>=)." << endl;
-	}
+	return this->size >= other.size;
 }
 
-String& String::operator==(String& other)
+bool String::operator==(const String& other)
 {
-	if (this->size == other.size)
-	{
-		cout << "Isn't equeal." << endl;
-	}
+	return this->size == other.size;
 }
 
-String& String::operator!=(String& other)
+bool String::operator !=(const String& other)
 {
-	// TODO: вставьте здесь оператор return
+	return this->size != other.size;
 }
 
 String& String::operator!()
 {
-	char* str;
+	String string;
 	int j = 0;
 
 	for (int i = this->size; i > 0; i--)
 	{
-		this->str[i] += str[j];
+		string.str[j] += str[i];
 		j++;
 	}
+
+	return string;
 }
 
-String& String::operator[](int idex)
+String String::operator[](int index)
 {
-	return this->str[idex];
+	String string;
+	return string.str[index];
 }
 
-String& operator+(String& other, char* str)
+String& String::operator()(size_t point)
 {
+	String string;
+
+	if (point > this->size || point < this->size)
+	{
+		return string = "";
+	}
+	else {
+		for (size_t i = point; i < this->size; i++)
+		{
+			string.str[i] = this->str[i];
+		}
+	}
+
+	return string;
+}
+
+String& String::operator()(size_t firstPoint, size_t twoPoint)
+{
+	String string;
+
+	if (firstPoint > twoPoint || twoPoint > this->size || firstPoint > this->size)
+	{
+		return string = "";
+	}
+	else {
+		for (size_t i = firstPoint; i < twoPoint; i++)
+		{
+			string.str[i] = this->str[i];
+		}
+	}
+
+	return string;
+}
+
+String& String::operator++()
+{
+	String string;
+	string.str++;
+
+	for (size_t i = 1; i < this->size; i++)
+	{
+		string.str[i] = this->str[i];
+	}
+
+	return string;
+}
+
+String String::operator++(int)
+{
+	String tmp = *this;
+	++* this;
+	return tmp;
+}
+
+String& operator+(const String& other, char* str)
+{
+	String string;
+
 	size_t temp_size = other.size + strlen(str);
 
 	str[temp_size] += other.str[other.size];
 	str[temp_size] += str[strlen(str)];
+
+	string.str[temp_size] = str[temp_size];
+
+	return string;
 }
 
-String& operator+(char* str, String& other)
+String& operator+(char* str, const String& other)
 {
+	String string;
+
 	size_t temp_size = other.size + strlen(str);
 
 	str[temp_size] += str[strlen(str)];
 	str[temp_size] += other.str[other.size];
+
+	string.str[temp_size] = str[temp_size];
+
+	return string;
 }
 
 void Swap(String& objFirst, String& objSecond)

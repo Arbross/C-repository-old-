@@ -4,17 +4,17 @@ using namespace std;
 
 int main()
 {
-	String str("Test line");
+	String str("o");
 	String str2("ghfghfghfg");
+	String str3;
 
-	cout << str.getStr() << endl;
-	cout << str2.getStr() << endl;
+	int lol = str != str2;
+	cout << lol << endl;
 
-	Swap(str, str2);
+	String ste = str * str3;
+	cout << ste.getStr() << endl;
 
-	cout << str.getStr() << endl;
-	cout << str2.getStr() << endl;
-
-
+	/*str3 = str.isEqueal(str2);
+	cout << str3 << endl;*/
 
 }
