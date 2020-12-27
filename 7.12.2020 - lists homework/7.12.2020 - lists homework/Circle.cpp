@@ -18,13 +18,13 @@ void Circle::print() const
 
 double Circle::countArea() const
 {
-	const float pi = 3.14;
+	const double pi = 3.14;
 	return pi * (radius * radius);
 }
 
 double Circle::countLength() const
 {
-	const float pi = 3.14;
+	const double pi = 3.14;
 	return 2 * (pi * radius);
 }
 
