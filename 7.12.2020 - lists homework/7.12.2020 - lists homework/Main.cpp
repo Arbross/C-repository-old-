@@ -1,10 +1,14 @@
 #include "Main.h"
 
-double Main::maxArea(std::initializer_list<Triangle>& list)
+Main::Main(Triangle triangle, Rectangle rectangle, Circle circle)
+	: triangle(triangle), rectangle(rectangle), circle(circle)
+{}
+
+double Main::maxArea(std::initializer_list<Triangle> list)
 {
 	double max = 0;
 
-	for (auto& elem : list)
+	for (const auto& elem : list)
 	{
 		if (max < elem.countArea())
 		{
@@ -15,20 +19,20 @@ double Main::maxArea(std::initializer_list<Triangle>& list)
 	return max;
 }
 
-Circle Main::maxOfRadius(initializer_list<Circle>& list, double num)
+Circle Main::maxOfRadius(const initializer_list<Circle> list, const double num)
 {
-	for (auto& elem : list)
+	for (const auto& elem : list)
 	{
 		if (elem.getRadius() < num)
 		{
-			return this->circle;
+			return elem;
 		}
 		else if (elem.getRadius() == 0)
 		{
-			return this->circle;
+			return elem;
 		}
 		else {
-			continue;
+			cerr << "Ups..." << endl;
 		}
 	}
 }

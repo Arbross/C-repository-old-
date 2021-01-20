@@ -11,17 +11,18 @@ using namespace std;
 class Main
 {
 public:
-	Main();
+	Main(Triangle triangle, Rectangle rectangle, Circle circle);
+	Main() = default;
 
-	double maxArea(initializer_list<Triangle>& list);
+	static double maxArea(std::initializer_list<Triangle> list);
 
 	template <typename T>
-	void print(initializer_list<T>& list);
+	static void show(const initializer_list<T>& list);
 	
-	Circle maxOfRadius(initializer_list<Circle>& list, double num);
+	static Circle maxOfRadius(const initializer_list<Circle> list, const double num);
 
 	template <typename T>
-	tuple<int, int, int> maxOfAreaCount(initializer_list<T>& list, int num);
+	static tuple<int, int, int> maxOfAreaCount(const initializer_list<T> list, const int num);
 private:
 	Triangle triangle;
 	Rectangle rectangle;
@@ -29,20 +30,16 @@ private:
 };
 
 template<typename T>
-inline void Main::print(initializer_list<T>& list)
+inline void Main::show(const initializer_list<T>& list)
 {
-	int i = 0;
-
-	for (auto& elem : list)
+	for (const auto& elem : list)
 	{
-		cout << "Id: " << i << endl;
 		elem.print();
-		cout << endl;
 	}
 }
 
 template<typename T>
-inline tuple<int, int, int> Main::maxOfAreaCount(initializer_list<T>& list, int num)
+inline tuple<int, int, int> Main::maxOfAreaCount(const initializer_list<T> list, const int num)
 {
 	int tempMin = 0, tempMax = 0, tempEqueal = 0;
 
@@ -62,5 +59,5 @@ inline tuple<int, int, int> Main::maxOfAreaCount(initializer_list<T>& list, int 
 		}
 	}
 
-	return make_tuple(tempMin, tempMax, tempEqueal);
+	return std::make_tuple(tempMin, tempMax, tempEqueal);
 }

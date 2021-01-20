@@ -1,11 +1,5 @@
-﻿  Circle.cpp
-  Main.cpp
-  Rectangle.cpp
+﻿  Main.cpp
   Source.cpp
-C:\Users\victor\Desktop\7.12.2020 - lists homework\7.12.2020 - lists homework\Source.cpp(15): error C2280: "Main::Main(void)": предпринята попытка ссылки на удаленную функцию
-C:\Users\victor\Desktop\7.12.2020 - lists homework\7.12.2020 - lists homework\Main.h(14): message : см. объявление "Main::Main"
-C:\Users\victor\Desktop\7.12.2020 - lists homework\7.12.2020 - lists homework\Main.h(14,2): message : "Main::Main(void)": функция неявно удалена, так как в элемент данных "Main::circle" не содержится соответствующий конструктор по умолчанию или разрешение перегрузки было неоднозначным.
-C:\Users\victor\Desktop\7.12.2020 - lists homework\7.12.2020 - lists homework\Main.h(28): message : см. объявление "Main::circle"
-  Triangle.cpp
   Создание кода...
-C:\Users\victor\Desktop\7.12.2020 - lists homework\7.12.2020 - lists homework\Main.cpp(31): warning C4715: Main::maxOfRadius: значение возвращается не при всех путях выполнения
+C:\Users\victor\Desktop\7.12.2020 - lists homework\7.12.2020 - lists homework\Main.cpp(38): warning C4715: Main::maxOfRadius: значение возвращается не при всех путях выполнения
+  7.12.2020 - lists homework.vcxproj -> C:\Users\victor\Desktop\7.12.2020 - lists homework\Debug\7.12.2020 - lists homework.exe

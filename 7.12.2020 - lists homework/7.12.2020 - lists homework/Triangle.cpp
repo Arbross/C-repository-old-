@@ -1,6 +1,6 @@
 #include "Triangle.h"
 
-Triangle::Triangle(size_t& sideA, size_t& sideB, size_t& sideC)
+Triangle::Triangle(double& sideA, double& sideB, double& sideC)
 	: sideA(sideA), sideB(sideB), sideC(sideC)
 {}
 

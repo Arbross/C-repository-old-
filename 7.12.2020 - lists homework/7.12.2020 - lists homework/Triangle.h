@@ -6,7 +6,7 @@ using namespace std;
 class Triangle
 {
 public:
-	Triangle(size_t& sideA, size_t& sideB, size_t& sideC);
+	Triangle(double& sideA, double& sideB, double& sideC);
 	~Triangle();
 
 	void print() const;

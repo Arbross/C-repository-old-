@@ -1,0 +1,6 @@
+﻿  Source.cpp
+  Water.cpp
+  Создание кода...
+C:\Users\victor\source\repos\Static fields, methods\Static fields, methods\Water.cpp(118): warning C4715: Water::isEqueal: значение возвращается не при всех путях выполнения
+C:\Users\victor\source\repos\Static fields, methods\Static fields, methods\Water.cpp(140): warning C4715: Water::findMaxSquareType: значение возвращается не при всех путях выполнения
+  Static fields, methods.vcxproj -> C:\Users\victor\source\repos\Static fields, methods\Debug\Static fields, methods.exe
