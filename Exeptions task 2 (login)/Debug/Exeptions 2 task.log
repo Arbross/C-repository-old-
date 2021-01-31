@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Users\victor\source\repos\Exeptions 2 task\Exeptions 2 task\Source.cpp(22,28): warning C4101: ex: неиспользованная локальная переменная
+C:\Users\victor\source\repos\Exeptions 2 task\Exeptions 2 task\Source.cpp(26,26): warning C4101: ex: неиспользованная локальная переменная
+  Exeptions 2 task.vcxproj -> C:\Users\victor\source\repos\Exeptions 2 task\Debug\Exeptions 2 task.exe
